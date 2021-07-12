@@ -64,5 +64,61 @@ namespace Maharishi
 
             return isConcatenatedSum;
         }
+
+        /*
+         * efine an m-n sequenced array to be an array that contains one or more occurrences of all the integers
+            between m and n inclusive. Furthermore, the array must be in ascending order and contain only those
+            integers. For example, {2, 2, 3, 4, 4, 4, 5} is a 2-5 sequenced array. The array {2, 2, 3, 5, 5, 5} is not a 2-5
+            sequenced array because it is missing a 4. The array {0, 2, 2, 3, 3} is not a 2-3 sequenced array because the
+            0 is out of range. And {1,1, 3, 2, 2, 4} is not a 1-4 sequenced array because it is not in ascending order.
+            Write a method named isSequencedArray that returns 1 if its argument is a m-n sequenced array,
+            otherwise it returns 0.
+        */
+        public int isSequencedArray(int[] a, int m, int n)
+        {
+            int isSequenced = 1;
+            //check if there is out of range value
+            for(int i=0;i<a.Length;i++)
+            {
+                if((a[i])<m || (a[i]) > n)
+                {
+                    isSequenced = 0;
+                    break;
+                }
+            }
+            int t = m;
+            //check if all exisit in the array
+            while(t<=n)
+            {
+                bool isFound = false;
+                for (int i = 0; i < a.Length; i++)
+                {
+                    if (a[i] == t)
+                    { 
+                        isFound = true;
+                        break;
+                    }
+                }
+
+                if(!isFound)
+                {
+                    isSequenced = 0;
+                    break;
+                }
+                t++;
+            }
+            //check if the array is sequenced
+
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                if (a[i]>a[i+1])
+                {
+                    isSequenced = 0;
+                    break;
+                }
+            }
+
+            return isSequenced;
+        }
     }
 }
