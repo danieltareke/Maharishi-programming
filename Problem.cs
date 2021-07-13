@@ -66,7 +66,7 @@ namespace Maharishi
         }
 
         /*
-         * efine an m-n sequenced array to be an array that contains one or more occurrences of all the integers
+         * Define an m-n sequenced array to be an array that contains one or more occurrences of all the integers
             between m and n inclusive. Furthermore, the array must be in ascending order and contain only those
             integers. For example, {2, 2, 3, 4, 4, 4, 5} is a 2-5 sequenced array. The array {2, 2, 3, 5, 5, 5} is not a 2-5
             sequenced array because it is missing a 4. The array {0, 2, 2, 3, 3} is not a 2-3 sequenced array because the
@@ -119,6 +119,33 @@ namespace Maharishi
             }
 
             return isSequenced;
+        }
+
+        public int largestPrimeFactor(int n)
+        {
+            int largestPrimeN = 0;
+            if (n <= 1)
+                return 0;
+
+            int number = n;
+
+            for (int i = 2; i < number; i++)
+            {
+                while (number % i == 0)
+                {
+                    if (i > largestPrimeN)
+                        largestPrimeN = i;
+
+                    number = number / i;
+                }
+            }
+            if (number > 2)
+            {
+                if (number > largestPrimeN)
+                    largestPrimeN = number;
+            }
+
+            return largestPrimeN;
         }
     }
 }

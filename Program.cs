@@ -19,6 +19,10 @@ namespace Maharishi
             //isSequencedArray
             int [] d= { -5, -5, -4, -4, -4, -3, -3, -2, -2, -2 };
             response = problem.isSequencedArray(d, -5,-2).ToString();
+            // Console.WriteLine(response);
+
+            //largestPrimeFactor
+            response = problem.largestPrimeFactor(6936).ToString();
             Console.WriteLine(response);
         }
     }
