@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Maharishi2
+namespace Maharishi
 {
     public class Problem
     {
@@ -234,6 +234,27 @@ namespace Maharishi2
                 }
             }
             return a;
+        }
+
+        public int isCubePowerful(int n)
+        {
+            int resu = 0;
+            int sum = 0;
+            int m = n;
+
+            while(m>0)
+            {
+                int r = m % 10;
+                m = m / 10;
+                sum = sum + (int)Math.Pow(r,3);
+            }
+
+            if (n == sum) 
+                resu = 1;
+            else
+                resu = 0;
+
+            return resu;
         }
     }
 }
