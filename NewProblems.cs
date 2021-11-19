@@ -9,6 +9,24 @@ namespace Maharishi
     
     public class NewProblems
     {
+        public int isBunker(int n)
+        {
+            int a = 0, b = 1, c = 0, j = 0;
+            while (c < n)
+            {
+                c = a + b;
+                a = j;
+                b = c;
+                j++;
+
+            }
+            if (c == n)
+                return 1;
+            else
+                return 0;
+        }
+
+
         public int isNZeroPacked(int[] a, int n)
         {
             if (a.Length < n + 2)

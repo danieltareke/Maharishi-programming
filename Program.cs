@@ -99,8 +99,8 @@ namespace Maharishi
             //Console.WriteLine(r);
             //int r = newp.isNormal(12);
             //Console.WriteLine(r);
-            int[] a2 = { 0, 0, 1, 0, 0 };
-            int r = newp.isNZeroPacked(a2,2);
+            //int[] a2 = { 0, 0, 1, 0, 0 };
+            int r = newp.isBunker(8);
             Console.WriteLine(r);
             Console.ReadKey();
         }
